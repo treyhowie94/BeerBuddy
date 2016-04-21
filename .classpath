@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/Users/treyhowie/Documents/jsoup-1.8.2.jar"/>
+	<classpathentry kind="lib" path="/Users/treyhowie/Downloads/com.mysql.jdbc_5.1.5.jar.zip"/>
+	<classpathentry kind="lib" path="/Users/treyhowie/Downloads/htmlunit-2.20.-OSGi.jar"/>
+	<classpathentry kind="lib" path="/Users/treyhowie/Downloads/jsch-0.1.53.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
