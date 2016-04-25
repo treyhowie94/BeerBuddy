@@ -37,10 +37,10 @@ public abstract class StateMachineBase extends UIBuilder {
         UIBuilder.registerCustomComponent("ComboBox", com.codename1.ui.ComboBox.class);
         UIBuilder.registerCustomComponent("Tabs", com.codename1.ui.Tabs.class);
         UIBuilder.registerCustomComponent("Form", com.codename1.ui.Form.class);
+        UIBuilder.registerCustomComponent("CheckBox", com.codename1.ui.CheckBox.class);
         UIBuilder.registerCustomComponent("MultiList", com.codename1.ui.list.MultiList.class);
         UIBuilder.registerCustomComponent("Label", com.codename1.ui.Label.class);
         UIBuilder.registerCustomComponent("TextArea", com.codename1.ui.TextArea.class);
-        UIBuilder.registerCustomComponent("List", com.codename1.ui.List.class);
         UIBuilder.registerCustomComponent("Container", com.codename1.ui.Container.class);
         if(loadTheme) {
             if(res == null) {
@@ -80,10 +80,10 @@ public abstract class StateMachineBase extends UIBuilder {
         UIBuilder.registerCustomComponent("ComboBox", com.codename1.ui.ComboBox.class);
         UIBuilder.registerCustomComponent("Tabs", com.codename1.ui.Tabs.class);
         UIBuilder.registerCustomComponent("Form", com.codename1.ui.Form.class);
+        UIBuilder.registerCustomComponent("CheckBox", com.codename1.ui.CheckBox.class);
         UIBuilder.registerCustomComponent("MultiList", com.codename1.ui.list.MultiList.class);
         UIBuilder.registerCustomComponent("Label", com.codename1.ui.Label.class);
         UIBuilder.registerCustomComponent("TextArea", com.codename1.ui.TextArea.class);
-        UIBuilder.registerCustomComponent("List", com.codename1.ui.List.class);
         UIBuilder.registerCustomComponent("Container", com.codename1.ui.Container.class);
         if(loadTheme) {
             if(res == null) {
@@ -146,18 +146,6 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
-    public com.codename1.ui.Button findFavoriteButton(Component root) {
-        return (com.codename1.ui.Button)findByName("FavoriteButton", root);
-    }
-
-    public com.codename1.ui.Button findFavoriteButton() {
-        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("FavoriteButton", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Button)findByName("FavoriteButton", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
     public com.codename1.ui.Container findContainer2(Component root) {
         return (com.codename1.ui.Container)findByName("Container2", root);
     }
@@ -170,6 +158,18 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
+    public com.codename1.ui.Button findFavoriteButton(Component root) {
+        return (com.codename1.ui.Button)findByName("FavoriteButton", root);
+    }
+
+    public com.codename1.ui.Button findFavoriteButton() {
+        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("FavoriteButton", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Button)findByName("FavoriteButton", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
     public com.codename1.ui.Container findContainer1(Component root) {
         return (com.codename1.ui.Container)findByName("Container1", root);
     }
@@ -178,6 +178,30 @@ public abstract class StateMachineBase extends UIBuilder {
         com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Container1", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
             cmp = (com.codename1.ui.Container)findByName("Container1", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Container findContainer8(Component root) {
+        return (com.codename1.ui.Container)findByName("Container8", root);
+    }
+
+    public com.codename1.ui.Container findContainer8() {
+        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Container8", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Container)findByName("Container8", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Container findContainer7(Component root) {
+        return (com.codename1.ui.Container)findByName("Container7", root);
+    }
+
+    public com.codename1.ui.Container findContainer7() {
+        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Container7", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Container)findByName("Container7", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -218,26 +242,14 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
-    public com.codename1.ui.list.MultiList findBuddyList(Component root) {
-        return (com.codename1.ui.list.MultiList)findByName("BuddyList", root);
+    public com.codename1.ui.Button findRecommendBeer(Component root) {
+        return (com.codename1.ui.Button)findByName("RecommendBeer", root);
     }
 
-    public com.codename1.ui.list.MultiList findBuddyList() {
-        com.codename1.ui.list.MultiList cmp = (com.codename1.ui.list.MultiList)findByName("BuddyList", Display.getInstance().getCurrent());
+    public com.codename1.ui.Button findRecommendBeer() {
+        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("RecommendBeer", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.list.MultiList)findByName("BuddyList", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
-    public com.codename1.ui.TextArea findTextArea1(Component root) {
-        return (com.codename1.ui.TextArea)findByName("TextArea1", root);
-    }
-
-    public com.codename1.ui.TextArea findTextArea1() {
-        com.codename1.ui.TextArea cmp = (com.codename1.ui.TextArea)findByName("TextArea1", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.TextArea)findByName("TextArea1", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.Button)findByName("RecommendBeer", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -254,86 +266,86 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
-    public com.codename1.ui.Label findUsernameLabel(Component root) {
-        return (com.codename1.ui.Label)findByName("UsernameLabel", root);
+    public com.codename1.ui.Button findRateButton(Component root) {
+        return (com.codename1.ui.Button)findByName("RateButton", root);
     }
 
-    public com.codename1.ui.Label findUsernameLabel() {
-        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("UsernameLabel", Display.getInstance().getCurrent());
+    public com.codename1.ui.Button findRateButton() {
+        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("RateButton", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Label)findByName("UsernameLabel", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.Button)findByName("RateButton", aboutToShowThisContainer);
         }
         return cmp;
     }
 
-    public com.codename1.ui.TextArea findBeerSearchField(Component root) {
-        return (com.codename1.ui.TextArea)findByName("BeerSearchField", root);
+    public com.codename1.ui.list.MultiList findRecommendedBeerList(Component root) {
+        return (com.codename1.ui.list.MultiList)findByName("RecommendedBeerList", root);
     }
 
-    public com.codename1.ui.TextArea findBeerSearchField() {
-        com.codename1.ui.TextArea cmp = (com.codename1.ui.TextArea)findByName("BeerSearchField", Display.getInstance().getCurrent());
+    public com.codename1.ui.list.MultiList findRecommendedBeerList() {
+        com.codename1.ui.list.MultiList cmp = (com.codename1.ui.list.MultiList)findByName("RecommendedBeerList", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.TextArea)findByName("BeerSearchField", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.list.MultiList)findByName("RecommendedBeerList", aboutToShowThisContainer);
         }
         return cmp;
     }
 
-    public com.codename1.ui.TextArea findPasswordLField(Component root) {
-        return (com.codename1.ui.TextArea)findByName("PasswordLField", root);
+    public com.codename1.ui.Button findAddBuddy(Component root) {
+        return (com.codename1.ui.Button)findByName("AddBuddy", root);
     }
 
-    public com.codename1.ui.TextArea findPasswordLField() {
-        com.codename1.ui.TextArea cmp = (com.codename1.ui.TextArea)findByName("PasswordLField", Display.getInstance().getCurrent());
+    public com.codename1.ui.Button findAddBuddy() {
+        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("AddBuddy", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.TextArea)findByName("PasswordLField", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.Button)findByName("AddBuddy", aboutToShowThisContainer);
         }
         return cmp;
     }
 
-    public com.codename1.ui.List findList(Component root) {
-        return (com.codename1.ui.List)findByName("List", root);
+    public com.codename1.ui.TextArea findRecommendBuddySearch(Component root) {
+        return (com.codename1.ui.TextArea)findByName("RecommendBuddySearch", root);
     }
 
-    public com.codename1.ui.List findList() {
-        com.codename1.ui.List cmp = (com.codename1.ui.List)findByName("List", Display.getInstance().getCurrent());
+    public com.codename1.ui.TextArea findRecommendBuddySearch() {
+        com.codename1.ui.TextArea cmp = (com.codename1.ui.TextArea)findByName("RecommendBuddySearch", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.List)findByName("List", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.TextArea)findByName("RecommendBuddySearch", aboutToShowThisContainer);
         }
         return cmp;
     }
 
-    public com.codename1.ui.Container findContainer(Component root) {
-        return (com.codename1.ui.Container)findByName("Container", root);
+    public com.codename1.ui.CheckBox findCheckBox4(Component root) {
+        return (com.codename1.ui.CheckBox)findByName("CheckBox4", root);
     }
 
-    public com.codename1.ui.Container findContainer() {
-        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Container", Display.getInstance().getCurrent());
+    public com.codename1.ui.CheckBox findCheckBox4() {
+        com.codename1.ui.CheckBox cmp = (com.codename1.ui.CheckBox)findByName("CheckBox4", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Container)findByName("Container", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.CheckBox)findByName("CheckBox4", aboutToShowThisContainer);
         }
         return cmp;
     }
 
-    public com.codename1.ui.list.MultiList findMultiList2(Component root) {
-        return (com.codename1.ui.list.MultiList)findByName("MultiList2", root);
+    public com.codename1.ui.CheckBox findCheckBox3(Component root) {
+        return (com.codename1.ui.CheckBox)findByName("CheckBox3", root);
     }
 
-    public com.codename1.ui.list.MultiList findMultiList2() {
-        com.codename1.ui.list.MultiList cmp = (com.codename1.ui.list.MultiList)findByName("MultiList2", Display.getInstance().getCurrent());
+    public com.codename1.ui.CheckBox findCheckBox3() {
+        com.codename1.ui.CheckBox cmp = (com.codename1.ui.CheckBox)findByName("CheckBox3", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.list.MultiList)findByName("MultiList2", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.CheckBox)findByName("CheckBox3", aboutToShowThisContainer);
         }
         return cmp;
     }
 
-    public com.codename1.ui.Label findLabel6(Component root) {
-        return (com.codename1.ui.Label)findByName("Label6", root);
+    public com.codename1.ui.Button findSearchButton(Component root) {
+        return (com.codename1.ui.Button)findByName("SearchButton", root);
     }
 
-    public com.codename1.ui.Label findLabel6() {
-        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("Label6", Display.getInstance().getCurrent());
+    public com.codename1.ui.Button findSearchButton() {
+        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("SearchButton", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Label)findByName("Label6", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.Button)findByName("SearchButton", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -350,26 +362,218 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
-    public com.codename1.ui.Label findLabel4(Component root) {
-        return (com.codename1.ui.Label)findByName("Label4", root);
+    public com.codename1.ui.Button findRecommendButton(Component root) {
+        return (com.codename1.ui.Button)findByName("RecommendButton", root);
     }
 
-    public com.codename1.ui.Label findLabel4() {
-        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("Label4", Display.getInstance().getCurrent());
+    public com.codename1.ui.Button findRecommendButton() {
+        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("RecommendButton", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Label)findByName("Label4", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.Button)findByName("RecommendButton", aboutToShowThisContainer);
         }
         return cmp;
     }
 
-    public com.codename1.ui.Label findLabel5(Component root) {
-        return (com.codename1.ui.Label)findByName("Label5", root);
+    public com.codename1.ui.list.MultiList findMyBuddyList(Component root) {
+        return (com.codename1.ui.list.MultiList)findByName("MyBuddyList", root);
     }
 
-    public com.codename1.ui.Label findLabel5() {
-        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("Label5", Display.getInstance().getCurrent());
+    public com.codename1.ui.list.MultiList findMyBuddyList() {
+        com.codename1.ui.list.MultiList cmp = (com.codename1.ui.list.MultiList)findByName("MyBuddyList", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Label)findByName("Label5", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.list.MultiList)findByName("MyBuddyList", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.TextArea findUsernameLField(Component root) {
+        return (com.codename1.ui.TextArea)findByName("UsernameLField", root);
+    }
+
+    public com.codename1.ui.TextArea findUsernameLField() {
+        com.codename1.ui.TextArea cmp = (com.codename1.ui.TextArea)findByName("UsernameLField", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.TextArea)findByName("UsernameLField", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.TextArea findPasswordSUField(Component root) {
+        return (com.codename1.ui.TextArea)findByName("PasswordSUField", root);
+    }
+
+    public com.codename1.ui.TextArea findPasswordSUField() {
+        com.codename1.ui.TextArea cmp = (com.codename1.ui.TextArea)findByName("PasswordSUField", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.TextArea)findByName("PasswordSUField", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Button findRecommendedBeer(Component root) {
+        return (com.codename1.ui.Button)findByName("RecommendedBeer", root);
+    }
+
+    public com.codename1.ui.Button findRecommendedBeer() {
+        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("RecommendedBeer", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Button)findByName("RecommendedBeer", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.list.MultiList findNewBeerList(Component root) {
+        return (com.codename1.ui.list.MultiList)findByName("NewBeerList", root);
+    }
+
+    public com.codename1.ui.list.MultiList findNewBeerList() {
+        com.codename1.ui.list.MultiList cmp = (com.codename1.ui.list.MultiList)findByName("NewBeerList", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.list.MultiList)findByName("NewBeerList", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Button findButton1(Component root) {
+        return (com.codename1.ui.Button)findByName("Button1", root);
+    }
+
+    public com.codename1.ui.Button findButton1() {
+        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("Button1", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Button)findByName("Button1", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.CheckBox findCheckBox1(Component root) {
+        return (com.codename1.ui.CheckBox)findByName("CheckBox1", root);
+    }
+
+    public com.codename1.ui.CheckBox findCheckBox1() {
+        com.codename1.ui.CheckBox cmp = (com.codename1.ui.CheckBox)findByName("CheckBox1", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.CheckBox)findByName("CheckBox1", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.CheckBox findCheckBox2(Component root) {
+        return (com.codename1.ui.CheckBox)findByName("CheckBox2", root);
+    }
+
+    public com.codename1.ui.CheckBox findCheckBox2() {
+        com.codename1.ui.CheckBox cmp = (com.codename1.ui.CheckBox)findByName("CheckBox2", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.CheckBox)findByName("CheckBox2", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.TextArea findBuddySearchArea(Component root) {
+        return (com.codename1.ui.TextArea)findByName("BuddySearchArea", root);
+    }
+
+    public com.codename1.ui.TextArea findBuddySearchArea() {
+        com.codename1.ui.TextArea cmp = (com.codename1.ui.TextArea)findByName("BuddySearchArea", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.TextArea)findByName("BuddySearchArea", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Button findFindNewBeer(Component root) {
+        return (com.codename1.ui.Button)findByName("FindNewBeer", root);
+    }
+
+    public com.codename1.ui.Button findFindNewBeer() {
+        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("FindNewBeer", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Button)findByName("FindNewBeer", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.list.MultiList findBuddyList(Component root) {
+        return (com.codename1.ui.list.MultiList)findByName("BuddyList", root);
+    }
+
+    public com.codename1.ui.list.MultiList findBuddyList() {
+        com.codename1.ui.list.MultiList cmp = (com.codename1.ui.list.MultiList)findByName("BuddyList", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.list.MultiList)findByName("BuddyList", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.TextArea findBeerSearchField(Component root) {
+        return (com.codename1.ui.TextArea)findByName("BeerSearchField", root);
+    }
+
+    public com.codename1.ui.TextArea findBeerSearchField() {
+        com.codename1.ui.TextArea cmp = (com.codename1.ui.TextArea)findByName("BeerSearchField", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.TextArea)findByName("BeerSearchField", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Label findUsernameLabel(Component root) {
+        return (com.codename1.ui.Label)findByName("UsernameLabel", root);
+    }
+
+    public com.codename1.ui.Label findUsernameLabel() {
+        com.codename1.ui.Label cmp = (com.codename1.ui.Label)findByName("UsernameLabel", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Label)findByName("UsernameLabel", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.CheckBox findCheckBox(Component root) {
+        return (com.codename1.ui.CheckBox)findByName("CheckBox", root);
+    }
+
+    public com.codename1.ui.CheckBox findCheckBox() {
+        com.codename1.ui.CheckBox cmp = (com.codename1.ui.CheckBox)findByName("CheckBox", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.CheckBox)findByName("CheckBox", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.list.MultiList findMyFavoriteList(Component root) {
+        return (com.codename1.ui.list.MultiList)findByName("MyFavoriteList", root);
+    }
+
+    public com.codename1.ui.list.MultiList findMyFavoriteList() {
+        com.codename1.ui.list.MultiList cmp = (com.codename1.ui.list.MultiList)findByName("MyFavoriteList", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.list.MultiList)findByName("MyFavoriteList", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.TextArea findPasswordLField(Component root) {
+        return (com.codename1.ui.TextArea)findByName("PasswordLField", root);
+    }
+
+    public com.codename1.ui.TextArea findPasswordLField() {
+        com.codename1.ui.TextArea cmp = (com.codename1.ui.TextArea)findByName("PasswordLField", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.TextArea)findByName("PasswordLField", aboutToShowThisContainer);
+        }
+        return cmp;
+    }
+
+    public com.codename1.ui.Container findContainer(Component root) {
+        return (com.codename1.ui.Container)findByName("Container", root);
+    }
+
+    public com.codename1.ui.Container findContainer() {
+        com.codename1.ui.Container cmp = (com.codename1.ui.Container)findByName("Container", Display.getInstance().getCurrent());
+        if(cmp == null && aboutToShowThisContainer != null) {
+            cmp = (com.codename1.ui.Container)findByName("Container", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -398,14 +602,14 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
-    public com.codename1.ui.TextArea findUsernameLField(Component root) {
-        return (com.codename1.ui.TextArea)findByName("UsernameLField", root);
+    public com.codename1.ui.list.MultiList findRecommendBuddyList(Component root) {
+        return (com.codename1.ui.list.MultiList)findByName("RecommendBuddyList", root);
     }
 
-    public com.codename1.ui.TextArea findUsernameLField() {
-        com.codename1.ui.TextArea cmp = (com.codename1.ui.TextArea)findByName("UsernameLField", Display.getInstance().getCurrent());
+    public com.codename1.ui.list.MultiList findRecommendBuddyList() {
+        com.codename1.ui.list.MultiList cmp = (com.codename1.ui.list.MultiList)findByName("RecommendBuddyList", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.TextArea)findByName("UsernameLField", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.list.MultiList)findByName("RecommendBuddyList", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -422,18 +626,6 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
-    public com.codename1.ui.TextArea findPasswordSUField(Component root) {
-        return (com.codename1.ui.TextArea)findByName("PasswordSUField", root);
-    }
-
-    public com.codename1.ui.TextArea findPasswordSUField() {
-        com.codename1.ui.TextArea cmp = (com.codename1.ui.TextArea)findByName("PasswordSUField", Display.getInstance().getCurrent());
-        if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.TextArea)findByName("PasswordSUField", aboutToShowThisContainer);
-        }
-        return cmp;
-    }
-
     public com.codename1.ui.Label findLabel(Component root) {
         return (com.codename1.ui.Label)findByName("Label", root);
     }
@@ -446,14 +638,14 @@ public abstract class StateMachineBase extends UIBuilder {
         return cmp;
     }
 
-    public com.codename1.ui.Button findButton1(Component root) {
-        return (com.codename1.ui.Button)findByName("Button1", root);
+    public com.codename1.ui.Button findSearchBuddies(Component root) {
+        return (com.codename1.ui.Button)findByName("SearchBuddies", root);
     }
 
-    public com.codename1.ui.Button findButton1() {
-        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("Button1", Display.getInstance().getCurrent());
+    public com.codename1.ui.Button findSearchBuddies() {
+        com.codename1.ui.Button cmp = (com.codename1.ui.Button)findByName("SearchBuddies", Display.getInstance().getCurrent());
         if(cmp == null && aboutToShowThisContainer != null) {
-            cmp = (com.codename1.ui.Button)findByName("Button1", aboutToShowThisContainer);
+            cmp = (com.codename1.ui.Button)findByName("SearchBuddies", aboutToShowThisContainer);
         }
         return cmp;
     }
@@ -472,7 +664,10 @@ public abstract class StateMachineBase extends UIBuilder {
 
     public static final int COMMAND_HomeMyBuddies = 6;
     public static final int COMMAND_MainSignUp = 3;
+    public static final int COMMAND_NewBeerBack = 10;
     public static final int COMMAND_MainAlreadyHaveAnAccountLoginHere = 4;
+    public static final int COMMAND_RecommendBeerBack = 8;
+    public static final int COMMAND_RecommendedBeerBack = 9;
     public static final int COMMAND_MainForWhenServerIsDown = 7;
     public static final int COMMAND_MyBuddiesBack = 5;
 
@@ -484,7 +679,19 @@ public abstract class StateMachineBase extends UIBuilder {
         return false;
     }
 
+    protected boolean onNewBeerBack() {
+        return false;
+    }
+
     protected boolean onMainAlreadyHaveAnAccountLoginHere() {
+        return false;
+    }
+
+    protected boolean onRecommendBeerBack() {
+        return false;
+    }
+
+    protected boolean onRecommendedBeerBack() {
         return false;
     }
 
@@ -512,8 +719,29 @@ public abstract class StateMachineBase extends UIBuilder {
                 }
                 break;
 
+            case COMMAND_NewBeerBack:
+                if(onNewBeerBack()) {
+                    ev.consume();
+                    return;
+                }
+                break;
+
             case COMMAND_MainAlreadyHaveAnAccountLoginHere:
                 if(onMainAlreadyHaveAnAccountLoginHere()) {
+                    ev.consume();
+                    return;
+                }
+                break;
+
+            case COMMAND_RecommendBeerBack:
+                if(onRecommendBeerBack()) {
+                    ev.consume();
+                    return;
+                }
+                break;
+
+            case COMMAND_RecommendedBeerBack:
+                if(onRecommendedBeerBack()) {
                     ev.consume();
                     return;
                 }
@@ -558,8 +786,26 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
+        if("Recommend Beer".equals(f.getName())) {
+            exitRecommendBeer(f);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("New Beer".equals(f.getName())) {
+            exitNewBeer(f);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
         if("My Buddies".equals(f.getName())) {
             exitMyBuddies(f);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("Recommended Beer".equals(f.getName())) {
+            exitRecommendedBeer(f);
             aboutToShowThisContainer = null;
             return;
         }
@@ -580,7 +826,19 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
 
+    protected void exitRecommendBeer(Form f) {
+    }
+
+
+    protected void exitNewBeer(Form f) {
+    }
+
+
     protected void exitMyBuddies(Form f) {
+    }
+
+
+    protected void exitRecommendedBeer(Form f) {
     }
 
     protected void beforeShow(Form f) {
@@ -603,8 +861,26 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
+        if("Recommend Beer".equals(f.getName())) {
+            beforeRecommendBeer(f);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("New Beer".equals(f.getName())) {
+            beforeNewBeer(f);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
         if("My Buddies".equals(f.getName())) {
             beforeMyBuddies(f);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("Recommended Beer".equals(f.getName())) {
+            beforeRecommendedBeer(f);
             aboutToShowThisContainer = null;
             return;
         }
@@ -625,7 +901,19 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
 
+    protected void beforeRecommendBeer(Form f) {
+    }
+
+
+    protected void beforeNewBeer(Form f) {
+    }
+
+
     protected void beforeMyBuddies(Form f) {
+    }
+
+
+    protected void beforeRecommendedBeer(Form f) {
     }
 
     protected void beforeShowContainer(Container c) {
@@ -648,8 +936,26 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
+        if("Recommend Beer".equals(c.getName())) {
+            beforeContainerRecommendBeer(c);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("New Beer".equals(c.getName())) {
+            beforeContainerNewBeer(c);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
         if("My Buddies".equals(c.getName())) {
             beforeContainerMyBuddies(c);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("Recommended Beer".equals(c.getName())) {
+            beforeContainerRecommendedBeer(c);
             aboutToShowThisContainer = null;
             return;
         }
@@ -670,7 +976,19 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
 
+    protected void beforeContainerRecommendBeer(Container c) {
+    }
+
+
+    protected void beforeContainerNewBeer(Container c) {
+    }
+
+
     protected void beforeContainerMyBuddies(Container c) {
+    }
+
+
+    protected void beforeContainerRecommendedBeer(Container c) {
     }
 
     protected void postShow(Form f) {
@@ -692,8 +1010,26 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
+        if("Recommend Beer".equals(f.getName())) {
+            postRecommendBeer(f);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("New Beer".equals(f.getName())) {
+            postNewBeer(f);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
         if("My Buddies".equals(f.getName())) {
             postMyBuddies(f);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("Recommended Beer".equals(f.getName())) {
+            postRecommendedBeer(f);
             aboutToShowThisContainer = null;
             return;
         }
@@ -714,7 +1050,19 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
 
+    protected void postRecommendBeer(Form f) {
+    }
+
+
+    protected void postNewBeer(Form f) {
+    }
+
+
     protected void postMyBuddies(Form f) {
+    }
+
+
+    protected void postRecommendedBeer(Form f) {
     }
 
     protected void postShowContainer(Container c) {
@@ -736,8 +1084,26 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
+        if("Recommend Beer".equals(c.getName())) {
+            postContainerRecommendBeer(c);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("New Beer".equals(c.getName())) {
+            postContainerNewBeer(c);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
         if("My Buddies".equals(c.getName())) {
             postContainerMyBuddies(c);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("Recommended Beer".equals(c.getName())) {
+            postContainerRecommendedBeer(c);
             aboutToShowThisContainer = null;
             return;
         }
@@ -758,7 +1124,19 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
 
+    protected void postContainerRecommendBeer(Container c) {
+    }
+
+
+    protected void postContainerNewBeer(Container c) {
+    }
+
+
     protected void postContainerMyBuddies(Container c) {
+    }
+
+
+    protected void postContainerRecommendedBeer(Container c) {
     }
 
     protected void onCreateRoot(String rootName) {
@@ -780,8 +1158,26 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
+        if("Recommend Beer".equals(rootName)) {
+            onCreateRecommendBeer();
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("New Beer".equals(rootName)) {
+            onCreateNewBeer();
+            aboutToShowThisContainer = null;
+            return;
+        }
+
         if("My Buddies".equals(rootName)) {
             onCreateMyBuddies();
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("Recommended Beer".equals(rootName)) {
+            onCreateRecommendedBeer();
             aboutToShowThisContainer = null;
             return;
         }
@@ -802,7 +1198,19 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
 
+    protected void onCreateRecommendBeer() {
+    }
+
+
+    protected void onCreateNewBeer() {
+    }
+
+
     protected void onCreateMyBuddies() {
+    }
+
+
+    protected void onCreateRecommendedBeer() {
     }
 
     protected Hashtable getFormState(Form f) {
@@ -825,8 +1233,26 @@ public abstract class StateMachineBase extends UIBuilder {
             return h;
         }
 
+        if("Recommend Beer".equals(f.getName())) {
+            getStateRecommendBeer(f, h);
+            aboutToShowThisContainer = null;
+            return h;
+        }
+
+        if("New Beer".equals(f.getName())) {
+            getStateNewBeer(f, h);
+            aboutToShowThisContainer = null;
+            return h;
+        }
+
         if("My Buddies".equals(f.getName())) {
             getStateMyBuddies(f, h);
+            aboutToShowThisContainer = null;
+            return h;
+        }
+
+        if("Recommended Beer".equals(f.getName())) {
+            getStateRecommendedBeer(f, h);
             aboutToShowThisContainer = null;
             return h;
         }
@@ -847,7 +1273,19 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
 
+    protected void getStateRecommendBeer(Form f, Hashtable h) {
+    }
+
+
+    protected void getStateNewBeer(Form f, Hashtable h) {
+    }
+
+
     protected void getStateMyBuddies(Form f, Hashtable h) {
+    }
+
+
+    protected void getStateRecommendedBeer(Form f, Hashtable h) {
     }
 
     protected void setFormState(Form f, Hashtable state) {
@@ -870,8 +1308,26 @@ public abstract class StateMachineBase extends UIBuilder {
             return;
         }
 
+        if("Recommend Beer".equals(f.getName())) {
+            setStateRecommendBeer(f, state);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("New Beer".equals(f.getName())) {
+            setStateNewBeer(f, state);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
         if("My Buddies".equals(f.getName())) {
             setStateMyBuddies(f, state);
+            aboutToShowThisContainer = null;
+            return;
+        }
+
+        if("Recommended Beer".equals(f.getName())) {
+            setStateRecommendedBeer(f, state);
             aboutToShowThisContainer = null;
             return;
         }
@@ -892,19 +1348,40 @@ public abstract class StateMachineBase extends UIBuilder {
     }
 
 
+    protected void setStateRecommendBeer(Form f, Hashtable state) {
+    }
+
+
+    protected void setStateNewBeer(Form f, Hashtable state) {
+    }
+
+
     protected void setStateMyBuddies(Form f, Hashtable state) {
+    }
+
+
+    protected void setStateRecommendedBeer(Form f, Hashtable state) {
     }
 
     protected boolean setListModel(List cmp) {
         String listName = cmp.getName();
+        if("RecommendedBeerList".equals(listName)) {
+            return initListModelRecommendedBeerList(cmp);
+        }
+        if("MyBuddyList".equals(listName)) {
+            return initListModelMyBuddyList(cmp);
+        }
+        if("NewBeerList".equals(listName)) {
+            return initListModelNewBeerList(cmp);
+        }
         if("BuddyList".equals(listName)) {
             return initListModelBuddyList(cmp);
         }
-        if("List".equals(listName)) {
-            return initListModelList(cmp);
+        if("MyFavoriteList".equals(listName)) {
+            return initListModelMyFavoriteList(cmp);
         }
-        if("MultiList2".equals(listName)) {
-            return initListModelMultiList2(cmp);
+        if("RecommendBuddyList".equals(listName)) {
+            return initListModelRecommendBuddyList(cmp);
         }
         if("SearchBy".equals(listName)) {
             return initListModelSearchBy(cmp);
@@ -915,15 +1392,27 @@ public abstract class StateMachineBase extends UIBuilder {
         return super.setListModel(cmp);
     }
 
+    protected boolean initListModelRecommendedBeerList(List cmp) {
+        return false;
+    }
+
+    protected boolean initListModelMyBuddyList(List cmp) {
+        return false;
+    }
+
+    protected boolean initListModelNewBeerList(List cmp) {
+        return false;
+    }
+
     protected boolean initListModelBuddyList(List cmp) {
         return false;
     }
 
-    protected boolean initListModelList(List cmp) {
+    protected boolean initListModelMyFavoriteList(List cmp) {
         return false;
     }
 
-    protected boolean initListModelMultiList2(List cmp) {
+    protected boolean initListModelRecommendBuddyList(List cmp) {
         return false;
     }
 
@@ -1001,38 +1490,120 @@ public abstract class StateMachineBase extends UIBuilder {
                 onHome_BeerListAction(c, event);
                 return;
             }
+            if("RecommendButton".equals(c.getName())) {
+                onHome_RecommendButtonAction(c, event);
+                return;
+            }
             if("FavoriteButton".equals(c.getName())) {
                 onHome_FavoriteButtonAction(c, event);
                 return;
             }
-            if("Button1".equals(c.getName())) {
-                onHome_Button1Action(c, event);
+            if("SearchBuddies".equals(c.getName())) {
+                onHome_SearchBuddiesAction(c, event);
                 return;
             }
-            if("TextArea1".equals(c.getName())) {
-                onHome_TextArea1Action(c, event);
+            if("BuddySearchArea".equals(c.getName())) {
+                onHome_BuddySearchAreaAction(c, event);
                 return;
             }
-            if("List".equals(c.getName())) {
-                onHome_ListAction(c, event);
+            if("AddBuddy".equals(c.getName())) {
+                onHome_AddBuddyAction(c, event);
                 return;
             }
-            if("MultiList2".equals(c.getName())) {
-                onHome_MultiList2Action(c, event);
+            if("BuddyList".equals(c.getName())) {
+                onHome_BuddyListAction(c, event);
+                return;
+            }
+            if("RateButton".equals(c.getName())) {
+                onHome_RateButtonAction(c, event);
+                return;
+            }
+            if("CheckBox".equals(c.getName())) {
+                onHome_CheckBoxAction(c, event);
+                return;
+            }
+            if("CheckBox1".equals(c.getName())) {
+                onHome_CheckBox1Action(c, event);
+                return;
+            }
+            if("CheckBox2".equals(c.getName())) {
+                onHome_CheckBox2Action(c, event);
+                return;
+            }
+            if("CheckBox3".equals(c.getName())) {
+                onHome_CheckBox3Action(c, event);
+                return;
+            }
+            if("CheckBox4".equals(c.getName())) {
+                onHome_CheckBox4Action(c, event);
+                return;
+            }
+            if("MyFavoriteList".equals(c.getName())) {
+                onHome_MyFavoriteListAction(c, event);
                 return;
             }
             if("Button2".equals(c.getName())) {
                 onHome_Button2Action(c, event);
                 return;
             }
+            if("RecommendedBeer".equals(c.getName())) {
+                onHome_RecommendedBeerAction(c, event);
+                return;
+            }
+            if("FindNewBeer".equals(c.getName())) {
+                onHome_FindNewBeerAction(c, event);
+                return;
+            }
+        }
+        if(rootContainerName.equals("Recommend Beer")) {
+            if("Button".equals(c.getName())) {
+                onRecommendBeer_ButtonAction(c, event);
+                return;
+            }
+            if("SearchButton".equals(c.getName())) {
+                onRecommendBeer_SearchButtonAction(c, event);
+                return;
+            }
+            if("RecommendBuddySearch".equals(c.getName())) {
+                onRecommendBeer_RecommendBuddySearchAction(c, event);
+                return;
+            }
+            if("RecommendBeer".equals(c.getName())) {
+                onRecommendBeer_RecommendBeerAction(c, event);
+                return;
+            }
+            if("RecommendBuddyList".equals(c.getName())) {
+                onRecommendBeer_RecommendBuddyListAction(c, event);
+                return;
+            }
+        }
+        if(rootContainerName.equals("New Beer")) {
+            if("Button".equals(c.getName())) {
+                onNewBeer_ButtonAction(c, event);
+                return;
+            }
+            if("NewBeerList".equals(c.getName())) {
+                onNewBeer_NewBeerListAction(c, event);
+                return;
+            }
         }
         if(rootContainerName.equals("My Buddies")) {
-            if("BuddyList".equals(c.getName())) {
-                onMyBuddies_BuddyListAction(c, event);
+            if("MyBuddyList".equals(c.getName())) {
+                onMyBuddies_MyBuddyListAction(c, event);
                 return;
             }
             if("Button".equals(c.getName())) {
                 onMyBuddies_ButtonAction(c, event);
+                return;
+            }
+        }
+        if(rootContainerName.equals("Recommended Beer")) {
+            if("Button".equals(c.getName())) {
+                onRecommendedBeer_ButtonAction(c, event);
+                return;
+            }
+            if("RecommendedBeerList".equals(c.getName())) {
+                onRecommendedBeer_RecommendedBeerListAction(c, event);
                 return;
             }
         }
@@ -1077,28 +1648,85 @@ public abstract class StateMachineBase extends UIBuilder {
       protected void onHome_BeerListAction(Component c, ActionEvent event) {
       }
 
+      protected void onHome_RecommendButtonAction(Component c, ActionEvent event) {
+      }
+
       protected void onHome_FavoriteButtonAction(Component c, ActionEvent event) {
       }
 
-      protected void onHome_Button1Action(Component c, ActionEvent event) {
+      protected void onHome_SearchBuddiesAction(Component c, ActionEvent event) {
       }
 
-      protected void onHome_TextArea1Action(Component c, ActionEvent event) {
+      protected void onHome_BuddySearchAreaAction(Component c, ActionEvent event) {
       }
 
-      protected void onHome_ListAction(Component c, ActionEvent event) {
+      protected void onHome_AddBuddyAction(Component c, ActionEvent event) {
       }
 
-      protected void onHome_MultiList2Action(Component c, ActionEvent event) {
+      protected void onHome_BuddyListAction(Component c, ActionEvent event) {
+      }
+
+      protected void onHome_RateButtonAction(Component c, ActionEvent event) {
+      }
+
+      protected void onHome_CheckBoxAction(Component c, ActionEvent event) {
+      }
+
+      protected void onHome_CheckBox1Action(Component c, ActionEvent event) {
+      }
+
+      protected void onHome_CheckBox2Action(Component c, ActionEvent event) {
+      }
+
+      protected void onHome_CheckBox3Action(Component c, ActionEvent event) {
+      }
+
+      protected void onHome_CheckBox4Action(Component c, ActionEvent event) {
+      }
+
+      protected void onHome_MyFavoriteListAction(Component c, ActionEvent event) {
       }
 
       protected void onHome_Button2Action(Component c, ActionEvent event) {
       }
 
-      protected void onMyBuddies_BuddyListAction(Component c, ActionEvent event) {
+      protected void onHome_RecommendedBeerAction(Component c, ActionEvent event) {
+      }
+
+      protected void onHome_FindNewBeerAction(Component c, ActionEvent event) {
+      }
+
+      protected void onRecommendBeer_ButtonAction(Component c, ActionEvent event) {
+      }
+
+      protected void onRecommendBeer_SearchButtonAction(Component c, ActionEvent event) {
+      }
+
+      protected void onRecommendBeer_RecommendBuddySearchAction(Component c, ActionEvent event) {
+      }
+
+      protected void onRecommendBeer_RecommendBeerAction(Component c, ActionEvent event) {
+      }
+
+      protected void onRecommendBeer_RecommendBuddyListAction(Component c, ActionEvent event) {
+      }
+
+      protected void onNewBeer_ButtonAction(Component c, ActionEvent event) {
+      }
+
+      protected void onNewBeer_NewBeerListAction(Component c, ActionEvent event) {
+      }
+
+      protected void onMyBuddies_MyBuddyListAction(Component c, ActionEvent event) {
       }
 
       protected void onMyBuddies_ButtonAction(Component c, ActionEvent event) {
+      }
+
+      protected void onRecommendedBeer_ButtonAction(Component c, ActionEvent event) {
+      }
+
+      protected void onRecommendedBeer_RecommendedBeerListAction(Component c, ActionEvent event) {
       }
 
 }
