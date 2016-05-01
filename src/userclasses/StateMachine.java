@@ -42,19 +42,20 @@ public class StateMachine extends StateMachineBase {
 	ListModel myFavoriteListModel;
 	ListModel myRecommendedListModel;
 	ListModel myNewBeerListModel;
+	//This creates a list entry for a beer
 	private Map<String, Object> createListEntry(String name, String abv, String ibu) {
-		  Map<String, Object> entry = new HashMap<String, Object>();
-		  entry.put("beerName", name);
-		  entry.put("abv", abv);
-		  entry.put("ibu", ibu);
+		  Map<String, Object> entry = new HashMap<String, Object>(); //creates hashmap to store data
+		  entry.put("beerName", name); //sets beerName as the name of the beer
+		  entry.put("abv", abv); //sets abv as the abv
+		  entry.put("ibu", ibu); //sets ibu as ibu
 		  
 		  return entry;
 		}
-	
+		//Same as above but for a buddy
 	private Map<String, Object> createBuddyListEntry(String name, String username) {
 		  Map<String, Object> entry = new HashMap<String, Object>();
-		  entry.put("name", name);
-		  entry.put("user", username);
+		  entry.put("name", name); //sets name as name
+		  entry.put("user", username); //sets username as the username
 		  
 		  return entry;
 		}
@@ -73,6 +74,16 @@ public class StateMachine extends StateMachineBase {
 	}
 
     @Override
+    /*
+     * This method makes a connection with the Beer Buddy server and
+     * creates a new account for the user using the name, username, and password 
+     * fields. 
+     * 
+     * This is an action event and displays a pop up window stating if the 
+     * sign up was successful or not. It does not return anything.
+     * 
+     * @see generated.StateMachineBase#onMain_Button1Action(com.codename1.ui.Component, com.codename1.ui.events.ActionEvent)
+     */
     protected void onMain_Button1Action(Component c, ActionEvent event) {
     	//THIS IS FOR CREATE ACCOUNT
     	String name = findNameSUField(c).getText(); //gets name
@@ -80,7 +91,7 @@ public class StateMachine extends StateMachineBase {
     	String password = findPasswordSUField(c).getText(); //gets password
     	
     	
-    	ConnectionRequest r = new ConnectionRequest() {
+    	ConnectionRequest r = new ConnectionRequest() { //connection request
     		Map<String, Object> m;
     		
     		
@@ -98,11 +109,9 @@ public class StateMachine extends StateMachineBase {
     			
 		        prop = (String)m.get("valid"); //all we need is if it is true or false so we get the first.
 		        userId = (String)m.get("id"); //sets the user id so we can use it later
-    			System.out.println(prop);
     			if(prop == "true"){
     	    	Dialog.show("Success","You are now signed up.", "OK",null);
     	    	userName = (String)m.get("username");
-    	    	System.out.println("loop");
     	    	NetworkManager.getInstance().shutdown();
     	    	showForm("Home",null);
     			}
@@ -126,6 +135,15 @@ public class StateMachine extends StateMachineBase {
     }
 
     @Override
+    /*
+     * This method makes a connection to the Beer Buddy server and logs a user
+     * in for a session using their username and password.
+     * 
+     * This is an action event and displays a pop up window stating if the 
+     * sign up was successful or not. It does not return anything.
+     * 
+     * @see generated.StateMachineBase#onLogin_ButtonAction(com.codename1.ui.Component, com.codename1.ui.events.ActionEvent)
+     */
     protected void onLogin_ButtonAction(Component c, ActionEvent event) {
     	//THIS IS TO LOGIN
     	String username = findUsernameLField(c).getText();
@@ -172,11 +190,22 @@ public class StateMachine extends StateMachineBase {
     }
 
     @Override
+    /*
+     * This method makes a connection to the Beer Buddy server and gets
+     * the list returned by the server based on the keyWords taken from the 
+     * textField. It determins if it should use the url for getting beers by
+     * name or by brewery depending on the value of selection.  
+     * 
+     * This is an action event and the list is
+     * rendered depending on the get respons. It does not return anything.
+     * 
+     * @see generated.StateMachineBase#onHome_ButtonAction(com.codename1.ui.Component, com.codename1.ui.events.ActionEvent)
+     */
     protected void onHome_ButtonAction(final Component c, ActionEvent event) {
     	//SEARCH BEER BY NAME/BREWERY
     	String keyWords = findBeerSearchField().getText();
     	String selection = (String)findSearchBy().getSelectedItem();
-    	idList.clear();
+    	idList.clear(); //clears idList so that I know which beers have been selected
     
     	final ArrayList<Map<String, Object>> data = new ArrayList<Map<String, Object>>();
     	  	ConnectionRequest r = new ConnectionRequest() {
@@ -185,7 +214,7 @@ public class StateMachine extends StateMachineBase {
     		@Override
     		protected void postResponse(){
     			
-    			findBeerList(c).setModel(new DefaultListModel(data));
+    			findBeerList(c).setModel(new DefaultListModel(data)); //sets the model after the server responds
     			
     		}
     		
@@ -198,7 +227,7 @@ public class StateMachine extends StateMachineBase {
     			System.out.println(myList);
     			for (Map<String, Object> obj : myList) {
     		    	
-    		       String abv = (String)obj.get("abv");
+    		       String abv = (String)obj.get("abv"); //pulls the abv from the list
     		      
     		       String name = (String)obj.get("name");
     		       String ibu = (String)obj.get("ibu");
@@ -234,6 +263,16 @@ public class StateMachine extends StateMachineBase {
     }
 
     @Override //ADDS BEER TO A FAVORITE LIST
+    /*
+     * This method connects to the Beer Buddy server and adds a selected beer
+     * to the user's favorites list. It checks which beers are selected in the
+     * list and then sends their id as a parameter in the url. 
+     * 
+     * This is an action event and displays a pop up window stating if
+     * the beer was successfully added or not. It does not return anything.
+     * 
+     * @see generated.StateMachineBase#onHome_FavoriteButtonAction(com.codename1.ui.Component, com.codename1.ui.events.ActionEvent)
+     */
     protected void onHome_FavoriteButtonAction(Component c, ActionEvent event) {
     	//adds a beer to a buddies favorite list
     	int size = findBeerList().size(); //gets size of generated search list
@@ -266,7 +305,6 @@ public class StateMachine extends StateMachineBase {
     	    			System.out.println(prop);
     	    			if(prop == "true"){
     	    	    	Dialog.show("Success","Your selection has been added to your favorite list.", "OK",null);
-    	    				
     	    			}
     	    			else{
     	        	    	Dialog.show("Error","This failed.", "OK",null);
@@ -282,7 +320,8 @@ public class StateMachine extends StateMachineBase {
     	    	Dialog dlg = prog.showInifiniteBlocking();
     	    	r.setDisposeOnCompletion(dlg);
     	    	NetworkManager.getInstance().addToQueueAndWait(r);
-    	    	
+    		
+
     	    	
     	    	
     	    	
@@ -339,6 +378,14 @@ public class StateMachine extends StateMachineBase {
     } 
 
     @Override //RECOMMENDS A BEER TO A BUDDY
+    /*
+     * This method sets up the recommending of a beer to a buddy. It pulls the
+     * beer id from the list of beers rendered and adds it to the recommendBeerIdList.
+     * 
+     * This is an action event and moves on to the next form after the event.
+     * It does not return anything.
+     * @see generated.StateMachineBase#onHome_RecommendButtonAction(com.codename1.ui.Component, com.codename1.ui.events.ActionEvent)
+     */
     protected void onHome_RecommendButtonAction(Component c, ActionEvent event) {
     	
     	int size = findBeerList().size(); //gets size of generated search list
@@ -355,6 +402,15 @@ public class StateMachine extends StateMachineBase {
     }
 
     @Override //SEARCH FOR BUDDIES
+    /*
+     * This method connects to the Beer Buddy server and returns the list
+     * of buddies depending on the keyWords read from the text field. 
+     * 
+     * This is an action event and renders a list depends on the get response
+     * from the server. This does not return anything.
+     * 
+     * @see generated.StateMachineBase#onHome_SearchBuddiesAction(com.codename1.ui.Component, com.codename1.ui.events.ActionEvent)
+     */
     protected void onHome_SearchBuddiesAction(final Component c, ActionEvent event) {
     	String keyWords = findBuddySearchArea().getText();
     	final ArrayList<Map<String, Object>> data = new ArrayList<Map<String, Object>>();
@@ -402,6 +458,15 @@ public class StateMachine extends StateMachineBase {
     }
 
     @Override //ADD NEW BUDDY
+    /*
+     * This method checks which buddies are selected in the list and adds them 
+     * based on id to the users buddy list. This is done by connecting to the Beer
+     * Buddy server and adding the appropriate ids to the url parameters. 
+     * 
+     * This is an action event and displays a pop up window stating if the
+     * buddy was added or not. This does not return anything.
+     * @see generated.StateMachineBase#onHome_AddBuddyAction(com.codename1.ui.Component, com.codename1.ui.events.ActionEvent)
+     */
     protected void onHome_AddBuddyAction(Component c, ActionEvent event) {
     	int size = findBuddyList().size(); //gets size of generated search list
     	for(int i = 0 ; i < size ; i++) {
@@ -434,7 +499,7 @@ public class StateMachine extends StateMachineBase {
     	    			}
     	    			else{
     	    				//NetworkManager.getInstance().shutdown();
-    	        	    	Dialog.show("Error","This failed.", "OK",null);
+    	        	    	Dialog.show("Error","You have already added this buddy.", "OK",null);
     	        	    	
 
     	    			}
@@ -498,6 +563,16 @@ public class StateMachine extends StateMachineBase {
     }
 
     @Override //THIS RATES A BEER
+    /*
+     * This method connects to the Beer Buddy server to rate a beer on the 
+     * user's favorite list. It checks which checkBox is selected and then uses
+     * that selection to set the parameters of the url. 
+     * 
+     * This is an action event and displays a pop up window stating if the
+     * beer was rated or not. This does not return anything.
+     * 
+     * @see generated.StateMachineBase#onHome_RateButtonAction(com.codename1.ui.Component, com.codename1.ui.events.ActionEvent)
+     */
     protected void onHome_RateButtonAction(Component c, ActionEvent event) {
     	String rating = null;
     	
@@ -573,6 +648,11 @@ public class StateMachine extends StateMachineBase {
     }
 
     @Override //SEARCH FOR BUDDIES IN RECOMMEND SCREEN
+    /*
+     * This method does the same as the buddy search it is just for the
+     * screen that you can recommend beers on.
+     * @see generated.StateMachineBase#onRecommendBeer_SearchButtonAction(com.codename1.ui.Component, com.codename1.ui.events.ActionEvent)
+     */
     protected void onRecommendBeer_SearchButtonAction(final Component c, ActionEvent event) {
     	String keyWords = findRecommendBuddySearch().getText();
     	final ArrayList<Map<String, Object>> data = new ArrayList<Map<String, Object>>();
@@ -620,6 +700,15 @@ public class StateMachine extends StateMachineBase {
     }
 
     @Override //RECOMMEND A BEER
+    /*
+     * This method connects to the Beer Buddy server and recommends a beer to
+     * another user. It checks which ids are in the buddyIdList and then 
+     * adds them to the parameters for the url.
+     * 
+     * This is an action event and displays a pop up window stating if the
+     * buddy was recommended or not. This does not return anything.
+     * @see generated.StateMachineBase#onRecommendBeer_RecommendBeerAction(com.codename1.ui.Component, com.codename1.ui.events.ActionEvent)
+     */
     protected void onRecommendBeer_RecommendBeerAction(Component c, ActionEvent event) {
     	int beerIdSize = recommendBeerIdList.size();
     	int buddyIdSize = buddyIdList.size();
